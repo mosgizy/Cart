@@ -18,8 +18,7 @@ const Item = ({ id, title, price, img, amount }) => {
             dispatch({ type: 'AMOUNT_IN_CART', payload: amountItems - 1 })
             dispatch({ type: "UPDATE_TOTAL_PRICE", payload: (Number(totalPrice) - Number(price)).toFixed(2) })
         }
-
-        removeItem(id)
+        amountItem - 1 === 0 && removeItem(id)
     }
 
     const removeItem = (id) => {

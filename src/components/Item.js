@@ -34,7 +34,7 @@ const Item = ({ id, title, price, img, amount }) => {
             <div className='flex gap-6'>
                 <img src={img} alt={title} className="w-20" />
                 <div className='tracking-[2px]'>
-                    <p className="title">{title}</p>
+                    <p className="text-[1.2rem] capitalize">{title}</p>
                     <p>{price}</p>
                     <button className='tracking-[2px] text-green-400' type='button' onClick={() => removeItem(id)}>remove</button>
                 </div>

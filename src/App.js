@@ -40,21 +40,19 @@ function App() {
     getCartItems();
   }, [])
 
-  if (state.isLoading) {
-    return <Loading />
-  }
-
   return (
     <appContext.Provider value={{getItems:state.getItems,amountItems:state.amountItems,dispatch,totalPrice:state.totalPrice}}>
-      <div className="App">
-        <Navbar />
-        <div className='w-[90vw] max-w-3xl m-auto'>
-          <h1 className='text-5xl text-center uppercase mt-[5rem] font-black tracking-widest'>your bag</h1>
-          {Math.round(state.totalPrice) ? <Items /> : ""}
-          <Total />
-          {Math.round(state.totalPrice) ? <ClearBtn /> : <p className='text-2xl text-center tracking-widest mt-6 text-green-800'>is currently empty</p>}
-        </div>
-      </div>
+      {
+        state.isLoading ? <Loading /> : <>
+          <Navbar />
+          <div className='w-[90vw] max-w-3xl m-auto'>
+            <h1 className='text-5xl text-center uppercase mt-[5rem] font-black tracking-widest'>your bag</h1>
+            {Math.round(state.totalPrice) ? <Items /> : ""}
+            <Total />
+            {Math.round(state.totalPrice) ? <ClearBtn /> : <p className='text-2xl text-center tracking-widest mt-6 text-green-800'>is currently empty</p>}
+          </div>
+        </>
+      }
     </appContext.Provider>
   );
 }

@@ -8,7 +8,7 @@ const Navbar = () => {
 
     return (
         <nav className='bg-green-600'>
-            <div className='flex items-center py-5 font-black justify-between max-w-[50rem] m-auto text-white'>
+            <div className='flex items-center py-5 px-7 font-black justify-between max-w-[50rem] m-auto text-white'>
                 <h1 className='text-4xl tracking-widest'>BabsTech</h1>
                 <div className='relative'>
                     <FontAwesomeIcon icon={faCartShopping} className="text-3xl" />
